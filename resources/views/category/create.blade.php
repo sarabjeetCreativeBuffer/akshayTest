@@ -6,7 +6,7 @@
                 <h2>Add New Task</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('task.list') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('category.list') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
         </div>
     @endif
 
-    <form action="{{ route('task.store') }}" method="POST">
+    <form action="{{ route('category.store') }}" method="POST">
         @csrf
 
         <div class="row">
@@ -35,25 +35,11 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Category </strong>
-                    <select class="form-control" name="category">
-                        @foreach ($categories as $category)
-                            <option value="">Select</option>
-                            <option value="{{ $category->id }}">{{ $category->category_name }}</option>
-                        @endforeach
-                    </select>
+                    <strong>Description:</strong>
+                    <input type="text" name="category_des" class="form-control" placeholder="description">
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Status </strong>
-                    <select class="form-control" name="status" placeholder="">
-                        <option value="">Select</option>
-                        <option value="pending">Pending</option>
-                        <option value="complete">Complete</option>
-                    </select>
-                </div>
-            </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>

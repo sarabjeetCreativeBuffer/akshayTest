@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +34,14 @@ Route::post('/task-delete/{id}', [TaskController::class, 'delete'])->name('task.
 Route::get('/task-show/{id}', [TaskController::class, 'show'])->name('task.show');
 Route::get('/task-edit/{id}', [TaskController::class, 'edit'])->name('task.edit');
 Route::post('/task-update', [TaskController::class, 'update'])->name('task.update');
+
+
+Route::get('/category-list', [CategoryController::class, 'index'])->name('category.list');
+Route::get('/category-create', [CategoryController::class, 'create'])->name('category.create');
+Route::post('/category-store', [CategoryController::class, 'store'])->name('category.store');
+Route::post('/category-delete/{id}', [CategoryController::class, 'delete'])->name('category.destroy');
+Route::get('/category-show/{id}', [CategoryController::class, 'show'])->name('category.show');
+Route::get('/category-edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
+Route::post('/category-update', [CategoryController::class, 'update'])->name('category.update');
+
 

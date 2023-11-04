@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Show Task</h2>
+                <h2> Show Category</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('category.list') }}"> Back</a>
@@ -15,13 +15,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                {{ $task->task_name }}
+                {{ $category->category_name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Category:</strong>
-                {{ $task->category->category_name }}
+                {{ $category->category_short_description }}
             </div>
         </div>
     </div>
